@@ -1,18 +1,14 @@
 .biographies {
-  background: #fff;
-  padding: ($default-block * 4) 0 $double-block; // 160px
+  // background: #fff;
+  // padding: ($default-block * 4) 0 $double-block; // 160px
+  @extend %top-section;
 
   .inner-container {
     max-width: 740px;
   }
 
   h2 {
-    color: $primary-color-dark;
-    font-size: $fs-normal-plus;
-    letter-spacing: 0.02em;
-    margin: 0 0 $three-fourths-block;
-    text-align: center;
-    text-transform: uppercase;
+    @extend %standard-h2;
   }
 
   .bio {
@@ -69,11 +65,11 @@
   }
 
   @include breakpoint(tabile) {
-    padding-top: $five-fourths-block * 5; // 250px
+    // padding-top: $five-fourths-block * 5; // 250px
   }
 
   @include breakpoint(mobile) {
-    padding-bottom: $default-block;
+    // padding-bottom: $default-block;
 
     .bio {
       @include margin(null auto);

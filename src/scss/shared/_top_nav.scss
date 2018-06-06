@@ -75,28 +75,35 @@ header {
     height: 0;
   }
 
+  li {
+    transition: $standard-transition;
+
+    &:hover {
+      color: $auxiliary-color;
+
+      svg {
+        filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.2));
+      }
+    }
+
+    svg {
+      filter: drop-shadow(1px 1px 0 transparent);
+    }
+
+    .icon {
+      svg {
+        filter: drop-shadow(0 0 0 transparent);
+      }
+    }
+  }
+
   &.light {
     li {
       color: #fff;
-      transition: $standard-transition;
-
-      svg {
-        filter: drop-shadow(1px 1px 0 transparent);
-      }
 
       &:hover {
-        svg {
-          filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.2));
-        }
-
         &:not(:first-child) {
           color: $auxiliary-color;
-        }
-
-        .icon {
-          svg {
-            filter: drop-shadow(0 0 0 transparent);
-          }
         }
       }
     }
@@ -104,18 +111,12 @@ header {
 
   &.dark {
     li {
-      transition: $standard-transition;
-
       &:first-child {
         @extend %logo-colors;
 
         &:hover {
           opacity: 0.6;
         }
-      }
-
-      &:hover {
-        color: $auxiliary-color;
       }
     }
   }

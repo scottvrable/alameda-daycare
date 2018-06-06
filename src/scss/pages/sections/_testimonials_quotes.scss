@@ -1,0 +1,113 @@
+.quotes {
+  @extend %top-section;
+
+  .inner-container {
+    max-width: 740px;
+  }
+
+  h2 {
+    @extend %standard-h2;
+    margin-bottom: $five-fourths-block;
+  }
+
+  .quote {
+    margin-bottom: $three-halves-block;
+    max-width: 525px;
+
+    &:nth-child(odd) {
+      span, .attribution {
+        color: $secondary-color;
+      }
+    }
+
+    &:nth-child(even) {
+      margin-left: calc(100% - 525px);
+
+      span, .attribution {
+        color: $primary-color-dark;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .the-quote {
+      font-size: $fs-normal-plus;
+      font-weight: $font-thin;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 125px;
+      font-weight: $font-regular;
+      line-height: 1px;
+      margin-bottom: $quarter-block;
+      text-indent: -($five-fourths-block);
+      vertical-align: bottom;
+    }
+
+    .attribution {
+      font-weight: $font-bold;
+      margin-right: -$half-block;
+      margin-top: $quarter-block;
+      text-align: right;
+    }
+  }
+
+  @include breakpoint(850px) {
+    .quote {
+      &:nth-child(odd), &:nth-child(even) {
+        @include margin(null auto);
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .quote {
+      padding-left: $half-block + $eighth-block;
+
+      span {
+        font-size: $fs-large;
+        margin-bottom: $half-block;
+        text-indent: -($half-block + $eighth-block);
+      }
+
+      .the-quote {
+        font-size: $fs-normal;
+      }
+
+      .attribution {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    h2 {
+      margin-bottom: $three-fourths-block;
+    }
+
+    .quote {
+      margin-bottom: $default-block;
+      padding-left: $three-eighths-block;
+
+      .the-quote, .attribution {
+        font-size: $fs-small;
+      }
+
+      .the-quote {
+        font-weight: $font-regular;
+        line-height: 1.5;
+      }
+
+      span {
+        font-size: $fs-above-average;
+        margin-bottom: $quarter-block;
+        text-indent: -$three-eighths-block;
+      }
+    }
+  }
+}

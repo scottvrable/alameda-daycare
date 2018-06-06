@@ -21,3 +21,26 @@
 %absolutely-center {
   @include position(absolute, 0);
 }
+
+%top-section {
+  background: #fff;
+  padding: ($default-block * 4) 0 $double-block; // 160px
+
+  @include breakpoint(tabile) {
+    padding-top: $five-fourths-block * 5; // 250px
+  }
+
+  @include breakpoint(mobile) {
+    padding-top: $default-block * 7; // 280px;
+    padding-bottom: $default-block;
+  }
+}
+
+%standard-h2 {
+  color: $primary-color-dark;
+  font-size: $fs-normal-plus;
+  letter-spacing: 0.02em;
+  margin: 0 0 $three-fourths-block;
+  text-align: center;
+  text-transform: uppercase;
+}

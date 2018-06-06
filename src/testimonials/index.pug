@@ -1,0 +1,37 @@
+extends ../_layouts/site
+
+block vars
+  - var pageClass = 'testimonials-page'
+  - var title = 'Testimonials'
+
+mixin quotation(theQuote, attribution)
+  .quote
+    p.the-quote
+      span &ldquo;
+      | !{theQuote}&rdquo;
+    p.attribution
+      | &mdash;!{attribution}
+
+block content
+  section.quotes
+    .inner-container
+      h2 ThulaSana Home Daycare Testimonials
+      div
+        +quotation(
+          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
+          'Joanne&nbsp;Lee'
+        )
+        +quotation(
+          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
+          'Person Two'
+        )
+        +quotation(
+          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
+          'Person Three'
+        )
+        +quotation(
+          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
+          'Person Four'
+        )
+
+  include ../_partials/cta-banner
