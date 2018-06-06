@@ -1,0 +1,18 @@
+// third-party libraries
+@import 'vendor/normalize';
+@import 'bourbon';
+
+// custom libraries
+@import 'custom_libraries/thulasana_variables';
+@import 'custom_libraries/thulasana_placeholders';
+@import 'custom_libraries/thulasana_mixins';
+
+// shared styles
+@import 'shared/fonts';
+@import 'shared/general';
+@import 'shared/top_nav';
+@import 'shared/footer';
+
+// pages
+@import 'pages/home_page';
+@import 'pages/about_page';

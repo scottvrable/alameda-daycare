@@ -1,0 +1,54 @@
+$bourbon: (
+  'global-font-file-formats': ('eot', 'svg', 'ttf', 'woff', 'woff2')
+);
+
+// colors
+$main-text-color: #404040;
+$primary-color-light: #d3eea4;
+$primary-color-dark: #7eca47;
+$secondary-color: #bb54d1;
+$auxiliary-color: #ebd435;
+$neutral-color: #b8b8b8;
+
+// font-weights
+$font-thin: 200;
+$font-regular: 400;
+$font-bold: 600;
+
+// font-sizes
+$fs-small: 16px;
+$fs-normal: 20px;
+$fs-normal-plus: 30px;
+$fs-above-average: 40px;
+$fs-large: 60px;
+$fs-xlarge: 70px;
+$fs-xxlarge: 90px;
+
+// spacing
+$default-block: 40px;
+$eighth-block: $default-block / 8; // 5px
+$quarter-block: $default-block / 4; // 10px
+$third-block: $default-block / 3; // 13.333px
+$three-eighths-block: $default-block * 3 / 8; // 15px
+$half-block: $default-block / 2; // 20px
+$two-thirds-block: $default-block * 2 / 3; // 26.666px
+$three-fourths-block: $default-block * 3 / 4; // 30px
+$five-fourths-block: $default-block * 5 / 4; // 50px
+$three-halves-block: $default-block * 3 / 2; // 60px
+$five-thirds-block: $default-block * 5 / 3; // 66.666px
+$seven-quarters-block: $default-block * 7 / 4; // 70px
+$double-block: $default-block * 2; //80px
+
+// z-index
+$z-hidden: -1;
+$z-low: 1;
+$z-middle: 5;
+$z-high: 10;
+$z-module: 1000;
+
+// misc
+$bd-radius: 5px;
+$logo-height: $double-block + $half-block + $eighth-block; // 105px
+$max-limit: 1440px;
+$small-ic-width: 930px;
+$standard-transition: all 0.2s;

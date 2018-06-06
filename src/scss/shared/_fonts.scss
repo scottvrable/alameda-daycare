@@ -1,0 +1,14 @@
+@include font-face('Rokkitt', '/fonts/rokkitt-light', map-get($bourbon, global-font-file-formats)) {
+  @extend %normal-font;
+  font-weight: $font-thin;
+}
+
+@include font-face('Rokkitt', '/fonts/rokkitt-regular', map-get($bourbon, global-font-file-formats)) {
+  @extend %normal-font;
+  font-weight: $font-regular;
+}
+
+@include font-face('Rokkitt', '/fonts/rokkitt-bold', map-get($bourbon, global-font-file-formats)) {
+  @extend %normal-font;
+  font-weight: $font-bold;
+}

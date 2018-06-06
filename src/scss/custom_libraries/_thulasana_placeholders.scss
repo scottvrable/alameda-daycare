@@ -1,0 +1,23 @@
+// applies to font rules in fonts.scss
+%normal-font {
+  font-display: swap;
+  font-style: normal;
+}
+
+%logo-colors {
+  .logo-top {
+    fill: $auxiliary-color;
+  }
+
+  .logo-middle {
+    fill: $primary-color-dark;
+  }
+
+  .logo-bottom {
+    fill: $secondary-color;
+  }
+}
+
+%absolutely-center {
+  @include position(absolute, 0);
+}

@@ -1,0 +1,29 @@
+.cta-banner {
+  background-color: $secondary-color;
+  padding: $three-halves-block $half-block;
+  text-align: center;
+
+  .inner-container {
+    @include padding(null 0);
+  }
+
+  h2 {
+    color: #fff;
+    font-size: $fs-large;
+    font-weight: $font-regular;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  .cta {
+    margin-top: $half-block;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    @include padding($five-fourths-block null);
+
+    h2 {
+      font-size: $fs-above-average;
+    }
+  }
+}

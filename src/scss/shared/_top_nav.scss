@@ -1,0 +1,170 @@
+header {
+  @extend %absolutely-center;
+
+  bottom: auto;
+  padding: $half-block;
+  z-index: $z-middle;
+
+  .inner-container {
+    @include padding(null 0);
+  }
+
+  nav {
+    position: relative;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+
+    &:first-child {
+      left: 0;
+      position: absolute;
+      top: 0;
+
+      a {
+        height: $logo-height;
+        width: 172px;
+      }
+
+      svg {
+        transition: $standard-transition;
+
+        > * {
+          fill: currentColor;
+          transition: $standard-transition;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      margin-right: $double-block + $half-block;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      @extend %logo-colors;
+    }
+  }
+
+  a {
+    color: currentColor;
+    display: block;
+    font-size: $fs-normal;
+    text-transform: lowercase;
+  }
+
+  .icon {
+    margin-right: $eighth-block;
+    vertical-align: -2px;
+
+    svg {
+      fill: currentColor;
+      height: $three-eighths-block;
+      width: auto;
+    }
+  }
+
+  .text-wrapper {
+    @include hide-text;
+
+    display: block;
+    height: 0;
+  }
+
+  &.light {
+    li {
+      color: #fff;
+      transition: $standard-transition;
+
+      svg {
+        filter: drop-shadow(1px 1px 0 transparent);
+      }
+
+      &:hover {
+        svg {
+          filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.2));
+        }
+
+        &:not(:first-child) {
+          color: $auxiliary-color;
+        }
+
+        .icon {
+          svg {
+            filter: drop-shadow(0 0 0 transparent);
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    li {
+      transition: $standard-transition;
+
+      &:first-child {
+        @extend %logo-colors;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      &:hover {
+        color: $auxiliary-color;
+      }
+    }
+  }
+
+  @include breakpoint(tabile) {
+    ul {
+      text-align: center;
+    }
+
+    li {
+      &:first-child {
+        display: block;
+        margin-bottom: $default-block;
+        position: static;
+
+        a {
+          @include margin(null auto);
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    li {
+      &:first-child {
+        margin-bottom: $three-fourths-block;
+      }
+
+      &:not(:first-child) {
+        margin-right: $three-fourths-block;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    li {
+      &:not(:first-child) {
+        margin-right: 0;
+        width: 50%;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        margin-bottom: $half-block;
+      }
+    }
+  }
+}

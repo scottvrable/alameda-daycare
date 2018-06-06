@@ -1,0 +1,36 @@
+footer
+  mixin day(dayAbbr, weekend = true)
+    li
+      span #{dayAbbr}
+      if weekend
+        | 7:30am &ndash; 5:30pm
+      else
+        | Closed
+
+  .inner-container
+    .map-container-outer
+      .map-container-inner
+        iframe(src='https://maps.google.com/maps?q=544 Central Ave, Alameda, CA&t=&z=15&ie=UTF8&iwloc=&output=embed' frameborder='0' scrolling='no')
+    .contact-wrapper    
+      .contact-info
+        h2 Address
+        address
+          p 544 Central Avenue
+          p Alameda, California 94501
+        p: a(href='https://www.google.com/maps/place/544+Central+Ave,+Alameda,+CA+94501/@37.7710791,-122.2829527,17z/data=!3m1!4b1!4m5!3m4!1s0x808f81243ec12979:0x5c20f5b0c61d9afb!8m2!3d37.7710791!4d-122.280764' target='_blank')
+          | Get directions
+        h2 Phone
+        p: a(href='tel:+1-415-513-2514' target='_blank') (415) 513-2514
+        h2 Email
+        p: span#H1526100946798.magic-email tyeyese at gmail dot com
+      .hours
+        h2 Hours
+        ul
+          +day('Mon')
+          +day('Tue')
+          +day('Wed')
+          +day('Thu')
+          +day('Fri')
+          +day('Sat', false)
+          +day('Sun', false)
+    small &copy;Copyright 2018&nbsp;&mdash; ThulaSana Home Daycare&nbsp;&mdash; All&nbsp;Rights&nbsp;Reserved.

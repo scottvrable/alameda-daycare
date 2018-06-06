@@ -1,0 +1,92 @@
+/**
+ * This mixin is for breakpoint convenience
+ * Example:
+ *  @include breakpoint(mobile) {
+ *    // rules  
+ *  }
+ */
+@mixin breakpoint($breakpoint, $low-bp: null) {
+  @if $breakpoint == mobile-portrait {
+    @media (max-width: 480px) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 767px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 992px) and (min-width: 768px) { @content; }
+  } @else if $breakpoint == tabile {
+    // covers both tablet and mobile :)
+    @media (max-width: 992px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1200px) and (min-width: 993px) { @content; }
+  } @else if $breakpoint == desktabile {
+    // covers desktop, tablet, and mobile :)
+    @media (max-width: 1200px) { @content; }
+  } @else if $breakpoint == large {
+    @media (min-width: 1200px) { @content; }
+  } @else if $breakpoint == x-large {
+    @media (min-width: 1681px) { @content; }
+  } @else {
+    // if low-bp is the 'min' string, set a min-width custom rule
+    @if $low-bp == 'min' {
+      @media (min-width: $breakpoint) { @content; }
+    } @else if $low-bp {
+      @media (max-width: $breakpoint) and (min-width: $low-bp) { @content; }
+    } @else {
+      @media (max-width: $breakpoint) { @content; }
+    }
+  }
+}
+
+// for using a higher-res background image for high-res screens
+@mixin retina-background($filename, $ext: png) {
+  background-image: url('#{$filename}-1x.#{$ext}');
+  @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url('#{$filename}-2x.#{$ext}');
+  }
+}
+
+/** 
+ * To add background img automatically for retina displays along with a faster-loading
+ * blurred background that will create the illusion of a faster-loading background-img
+ * Must have three files: # {filename}-2x, # {filename}-1x, and # {filename}-blur.
+ * The blur image should be as small as possible as the dimensions of the 1x image.
+ */
+@mixin retina-background-blur($filename, $ext: png) {
+  background-image: url('#{$filename}-1x.#{$ext}'), url('#{$filename}-blur.#{$ext}');
+
+  @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url('#{$filename}-2x.#{$ext}'), url('#{$filename}-blur.#{$ext}');
+  }
+}
+
+/**
+ * This method is a more robust @retina-background-blur
+ * If you leave 'mobile-blur' and 'tablet-blur' arguments on 'false,' it will not include a
+ * blurred background-image in the set for that breakpoint.
+ */
+@mixin retina-background-set-blur($filename, $ext: png, $tablet-blur: false, $mobile-blur: false) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include retina-background-blur($filename + '-desktop', $ext);
+
+  @include breakpoint(tablet) {
+    @if $tablet-blur {
+      @include retina-background-blur($filename + '-tablet', $ext);
+    } @else {
+      @include retina-background($filename + '-mobile', $ext);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    @if $mobile-blur {
+      @include retina-background-blur($filename + '-mobile', $ext);
+    } @else {
+      @include retina-background($filename + '-mobile', $ext);
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    @include retina-background($filename + '-mobile-portrait', $ext);
+  }
+}

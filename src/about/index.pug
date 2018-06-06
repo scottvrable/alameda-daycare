@@ -1,0 +1,35 @@
+extends ../_layouts/site
+
+block vars
+  - var pageClass = 'about-page'
+  - var title = 'About Us'
+
+mixin bio(name, title, image, description)
+  .bio
+    .image-col
+      .image-outer
+        .image-inner
+    .text-col
+      h3 !{name}
+      h4 !{title}
+      p !{description}
+
+block content
+  section.biographies
+    .inner-container
+      h2 About ThulaSana Home&nbsp;Daycare
+      .bios
+        +bio(
+          'Thembeka “Happy” Majola',
+          'Owner/Principal Caretaker',
+          '',
+          'Ut ut elit bibendum, bibendum justo at, ultrices justo. Morbi tellus ipsum, tempus nec posuere quis, venenatis vel quam. Cras in posuere nisl, ut tincidunt quam. Nam id tincidunt orci. Vestibulum magna tortor, ultrices ut ullamcorper sed, congue vitae tortor. Mauris eleifend eu mi eu porttitor. Quisque eget ex est.')
+
+  include ../_partials/cta-banner
+
+  section.instagram
+    .inner-container
+      h2 Learning, fun, and friendships
+      ul.instagram-feed-holder
+      a.text-link(href='https://instagram.com/lookatmeimscottiev' target='_blank')
+        | Follow us on Instagram

@@ -1,0 +1,30 @@
+- var defaultPageTitle = 'ThulaSana Home Daycare of Alameda, California'
+
+doctype
+html(lang='en-us')
+  block vars
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no')
+
+    if description
+      meta(name='description' content='#{description}')
+
+    link(rel='stylesheet' href='/css/styles.css')
+    
+    title
+      if title
+        = title + ' | ' + defaultPageTitle
+      else
+        = defaultPageTitle
+
+  body
+    div(class=pageClass)
+      include ../_partials/top-nav
+      main(role='main')
+        block content
+
+    include ../_partials/footer
+
+    script(src='/js/index.js' type='text/javascript')

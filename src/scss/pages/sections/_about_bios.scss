@@ -1,0 +1,94 @@
+.biographies {
+  background: #fff;
+  padding: ($default-block * 4) 0 $double-block; // 160px
+
+  .inner-container {
+    max-width: 740px;
+  }
+
+  h2 {
+    color: $primary-color-dark;
+    font-size: $fs-normal-plus;
+    letter-spacing: 0.02em;
+    margin: 0 0 $three-fourths-block;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .bio {
+    display: flex;
+    justify-content: space-between;
+    padding: $default-block 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    h3 {
+      font-size: 24px;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    h4 {
+      color: $secondary-color;
+      font-size: $fs-small;
+      margin: $eighth-block 0 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-weight: $font-thin;
+      line-height: 1.45;
+      margin-top: $quarter-block;
+    }
+  }
+
+  .image-col, .text-col {
+    width: 46.5%;
+  }
+
+  .image-outer {
+    background: #fff;
+    border: solid 1px $neutral-color;
+  }
+
+  .image-inner {
+    background: $neutral-color;
+    margin: $quarter-block;
+    padding-top: 100%;
+    position: relative;
+  }
+
+  @include breakpoint(tabile) {
+    padding-top: $five-fourths-block * 5; // 250px
+  }
+
+  @include breakpoint(mobile) {
+    padding-bottom: $default-block;
+
+    .bio {
+      @include margin(null auto);
+
+      display: block;
+      max-width: 350px;
+    }
+
+    .image-col, .text-col {
+      width: 100%;
+    }
+
+    .text-col {
+      @include padding(null #{$quarter-block});
+      margin-top: $three-fourths-block;
+    }
+  }
+}

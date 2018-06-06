@@ -1,0 +1,147 @@
+footer {
+  background-color: $primary-color-light;
+
+  .inner-container {
+    max-width: $small-ic-width;
+    padding: $three-halves-block $half-block;
+  }
+
+  .map-container-outer {
+    background: #fff;
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+    width: 305px;
+  }
+
+  .map-container-inner {
+    padding-top: 100%;
+    position: relative;
+  }
+
+  iframe {
+    @include position(absolute, 0);
+
+    height: 100%;
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 1s 0.5s;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .contact-wrapper {
+    display: inline-block;
+  }
+
+  .contact-info, .hours {
+    display: inline-block;
+    margin-left: ($double-block + $half-block);
+    vertical-align: top;
+
+    h2 {
+      font-size: $fs-normal;
+      letter-spacing: 0.02em;
+      margin: $three-fourths-block 0 0;
+      text-transform: uppercase;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    p {
+      font-size: $fs-small;
+      line-height: 1.45;
+      margin: 0;
+
+      a {
+        border-bottom: solid 1px currentColor;
+        color: currentColor;
+        display: inline-block;
+        line-height: 1;
+        transition: all 0.2s;
+
+        &:hover {
+          border-bottom-color: transparent;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .hours {
+    li {
+      line-height: 1;
+      margin-top: $third-block;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: $font-bold;
+      width: $default-block;
+    }
+  }
+
+  small {
+    display: block;
+    margin-top: $three-halves-block;
+    text-align: center;
+  }
+
+  @include breakpoint(tabile) {
+    .map-container-outer {
+      display: block;
+      margin-bottom: $default-block;
+      width: 100%;
+    }
+    
+    .map-container-inner {
+      padding-top: $half-block * 10; // 200px
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+    }
+
+    .contact-wrapper {
+      text-align: center;
+      width: 100%;
+    }
+
+    .contact-info {
+      margin-left: 0;
+      text-align: left;
+    }
+
+    .hours {
+      text-align: left;
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    .contact-wrapper {
+      display: block;
+      margin: auto;
+      position: relative;
+      right: -10px;
+      width: $half-block * 9; // 180px
+    }
+
+    .contact-info {
+      margin-bottom: $default-block;
+    }
+
+    .contact-info, .hours {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}

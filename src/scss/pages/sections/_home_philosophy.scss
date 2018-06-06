@@ -1,0 +1,162 @@
+.philosophy {
+  background-color: $secondary-color;
+  position: relative;
+
+  .sun-holder {
+    @keyframes sun-rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    bottom: 0;
+    height: 400px;
+    left: 20px;
+    overflow: hidden;
+    position: absolute;
+    width: 800px;
+
+    img {
+      animation: sun-rotation linear 60s infinite;
+      opacity: 0.1;
+    }
+  }
+
+  .inner-container {
+    max-width: $small-ic-width;
+    padding: $three-halves-block $half-block;
+    position: relative;
+    z-index: $z-middle;
+  }
+
+  .content {
+    display: inline-block;
+    max-width: 560px;
+    vertical-align: top;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: $fs-xlarge;
+    font-weight: $font-thin;
+    margin: 0 0 $half-block;
+  }
+
+  p {
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin: 0 0 $three-fourths-block;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .social {
+    display: inline-block;
+    margin-left: $five-fourths-block;
+    vertical-align: top;
+
+    h3 {
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 0.1em;
+      margin-top: $eighth-block;
+      text-transform: uppercase;
+    }
+
+    li {
+      margin-bottom: $three-fourths-block;
+      width: ($half-block * 6 + $eighth-block); // 125px
+
+      &.instagram {
+        margin-bottom: $half-block;
+      }
+    }
+
+    a {
+      color: #fff;
+      display: block;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $auxiliary-color;
+      }
+    }
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  @include breakpoint(tabile) {
+    .content {
+      max-width: 520px;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .inner-container {
+      max-width: 550px;
+    }
+
+    .content, .social {
+      display: block;
+      max-width: 100%;
+    }
+
+    .social {
+      margin: $default-block 0 0 0;
+
+      h3 {
+        text-align: center;
+      }
+
+      ul {
+        text-align: center;
+      }
+
+      li {
+        display: inline-block;
+        height: 50px;
+        margin: 0 $default-block 0 0;
+        vertical-align: top;
+        width: 115px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.instagram {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    .inner-container {
+      padding-bottom: $default-block;
+    }
+
+    h2 {
+      font-size: $fs-above-average;
+    }
+
+    .social {
+      li {
+        display: block;
+        margin: 0 auto;
+
+        &:last-child {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

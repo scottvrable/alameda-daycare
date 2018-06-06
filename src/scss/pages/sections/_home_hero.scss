@@ -1,0 +1,86 @@
+@keyframes bounceArrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  min-height: 100vh;
+
+  h1 {
+    color: #fff;
+    font-size: $fs-xxlarge;
+    font-weight: $font-thin;
+  }
+
+  .background-frame {
+    @include position(fixed, 0);
+    @include retina-background-set-blur('/img/home/laughing-baby', 'jpg', true, true);
+
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: $z-hidden;
+  }
+
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: ($three-halves-block * 3) $half-block; // 90px 20px
+    position: relative;
+  }
+
+  .down-arrow {
+    animation: bounceArrow infinite 2s ease-in-out;
+    background-image: url('/img/home/svgs/down-arrow.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 20px;
+    display: block;
+    height: 50px;
+    left: calc(50% - #{$three-eighths-block});
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.4s;
+    width: 30px;
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  @include breakpoint(tabile) {
+    .inner-container {
+      @include padding(#{$five-fourths-block * 5} null); // 250px 20px
+    }
+  }
+
+  @include breakpoint(mobile) {
+    h1 {
+      font-size: $fs-xlarge;
+    }
+
+    .inner-container {
+      @include padding(#{$eighth-block * 45} null); // 225px 20px
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    h1 {
+      font-size: $fs-large;
+    }
+
+    .inner-container {
+      @include padding(#{$half-block * 13} null #{$five-fourths-block * 2}); // 260px 20px 100px
+    }
+  }
+}
