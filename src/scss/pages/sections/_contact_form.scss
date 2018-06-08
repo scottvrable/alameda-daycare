@@ -1,0 +1,41 @@
+.form-section {
+  @extend %top-section;
+
+  .inner-container {
+    position: relative;
+
+    &:before {
+      background-color: $auxiliary-color;
+      content: '';
+      display: block;
+      left: 0;
+      height: 250px;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 150px);
+      width: 100%;
+    }
+  }
+
+  h2 {
+    @extend %standard-h2;
+  }
+
+  .form-container-wrapper {
+    outline: solid 5px #fff;
+    margin: 0 auto;
+    position: relative;
+    width: 280px;
+    z-index: $z-middle;
+  }
+
+  .form-container {
+    background-color: #fff;
+    border: solid 1px #b8b8b8;
+    margin: 0 auto;
+    max-width: 280px;
+    padding-bottom: $half-block;
+    position: relative;
+    z-index: $z-middle;
+  }
+}
