@@ -2,6 +2,7 @@
   @extend %top-section;
 
   .inner-container {
+    max-width: 100%;
     position: relative;
 
     &:before {
