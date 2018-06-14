@@ -12,18 +12,26 @@ mixin bio(name, title, image, description)
     .text-col
       h3 !{name}
       h4 !{title}
-      p !{description}
+      each para in description
+        p !{para}
 
 block content
   section.biographies
     .inner-container
-      h2 About ThulaSana Home&nbsp;Daycare
+      h1 About ThulaSana Home&nbsp;Daycare
       .bios
         +bio(
           'Thembeka “Happy” Majola',
           'Owner/Principal Caretaker',
           '',
-          'Ut ut elit bibendum, bibendum justo at, ultrices justo. Morbi tellus ipsum, tempus nec posuere quis, venenatis vel quam. Cras in posuere nisl, ut tincidunt quam. Nam id tincidunt orci. Vestibulum magna tortor, ultrices ut ullamcorper sed, congue vitae tortor. Mauris eleifend eu mi eu porttitor. Quisque eget ex est.')
+          [
+            'I am a multilingual South African with seven years of nannying experience. I cannot begin to tell you what an amazing experience it has been. The faith and trust that families have placed in me to help raise their little ones is humbling.',
+            'Additionally, I have completed several child development pyschology classes focused on building confidence and healthy self-esteem, child nutrition, and child development. These disciplines have given me a greater understanding of my critical role as a childcare provider while enhancing my passion and confidence for teaching.'
+          ])
+
+  section.more-details
+    .inner-container
+      h2 
 
   include ../_partials/cta-banner
 
