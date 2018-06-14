@@ -39,4 +39,63 @@
     position: relative;
     z-index: $z-middle;
   }
+
+  .social-links {
+    margin: 0 auto;
+    max-width: 420px;
+    text-align: center;
+
+    h2 {
+      font-size: $fs-normal;
+      margin-top: $default-block;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    li {
+      display: inline-block;
+      width: 140px;
+
+      a {
+        color: $main-text-color;
+        display: block;
+        padding: $eighth-block $half-block 0;
+        transition: all 0.2s;
+
+        svg {
+          fill: currentColor;
+        }
+
+        &:hover {
+          color: $auxiliary-color;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .social-links {
+      ul {
+        display: block;
+      }
+
+      li {
+        display: block;
+        margin: $third-block auto;
+
+        &.instagram {
+          margin-bottom: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+          margin-top: $eighth-block;
+        }
+      }
+    }
+  }
 }
