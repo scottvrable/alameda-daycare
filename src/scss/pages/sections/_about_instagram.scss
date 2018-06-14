@@ -8,9 +8,7 @@
   }
 
   h2 {
-    color: $primary-color-dark;
-    margin: 0 0 $three-fourths-block;
-    text-transform: uppercase;
+    @extend %secondary-heading;
   }
 
   .instagram-feed-holder {

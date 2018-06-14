@@ -36,11 +36,18 @@
   }
 }
 
-%standard-heading {
+%secondary-heading {
   color: $primary-color-dark;
-  font-size: $fs-normal-plus;
-  letter-spacing: 0.02em;
   margin: 0 0 $three-fourths-block;
   text-align: center;
   text-transform: uppercase;
 }
+
+%standard-heading {
+  @extend %secondary-heading;
+
+  font-size: $fs-normal-plus;
+  letter-spacing: 0.02em;
+}
+
+

@@ -1,0 +1,36 @@
+.more-details {
+  background-color: #fff;
+  padding-bottom: $double-block;
+
+  .inner-container {
+    max-width: 740px;
+  }
+
+  h2 {
+    @extend %secondary-heading;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: $half-block;
+  }
+
+  li {
+    line-height: 1.45;
+    font-size: $fs-normal;
+    font-weight: $font-thin;
+    margin-bottom: $quarter-block;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: $font-bold;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding-bottom: $default-block;
+  }
+}

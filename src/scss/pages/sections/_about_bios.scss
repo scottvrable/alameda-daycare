@@ -1,6 +1,4 @@
 .biographies {
-  // background: #fff;
-  // padding: ($default-block * 4) 0 $double-block; // 160px
   @extend %top-section;
 
   .inner-container {
@@ -64,13 +62,7 @@
     position: relative;
   }
 
-  @include breakpoint(tabile) {
-    // padding-top: $five-fourths-block * 5; // 250px
-  }
-
   @include breakpoint(mobile) {
-    // padding-bottom: $default-block;
-
     .bio {
       @include margin(null auto);
 
