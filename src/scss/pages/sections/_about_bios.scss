@@ -53,13 +53,17 @@
   .image-outer {
     background: #fff;
     border: solid 1px $neutral-color;
+    padding: $quarter-block;
   }
 
   .image-inner {
     background: $neutral-color;
-    margin: $quarter-block;
     padding-top: 100%;
     position: relative;
+
+    img {
+      @extend %absolutely-center;
+    }
   }
 
   @include breakpoint(mobile) {

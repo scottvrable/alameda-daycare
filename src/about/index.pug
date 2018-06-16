@@ -4,11 +4,12 @@ block vars
   - var pageClass = 'about-page'
   - var title = 'About Us'
 
-mixin bio(name, title, image, description)
+mixin bio(name, title, image, alt, description)
   .bio
     .image-col
       .image-outer
         .image-inner
+          img(src=image alt=alt)
     .text-col
       h3 !{name}
       h4 !{title}
@@ -23,7 +24,8 @@ block content
         +bio(
           'Thembeka “Happy” Majola',
           'Owner/Principal Caretaker',
-          '',
+          '/img/about/thembeka-happy-majola.jpg',
+          'Thembeka Happy Majola',
           [
             'I am a multilingual South African with seven years of nannying experience. I cannot begin to tell you what an amazing experience it has been. The faith and trust that families have placed in me to help raise their little ones is humbling.',
             'Additionally, I have completed several child development pyschology classes focused on building confidence and healthy self-esteem, child nutrition, and child development. These disciplines have given me a greater understanding of my critical role as a childcare provider while enhancing my passion and confidence for teaching.'
