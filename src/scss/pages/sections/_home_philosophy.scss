@@ -73,10 +73,6 @@
     li {
       margin-bottom: $three-fourths-block;
       width: ($half-block * 6 + $eighth-block); // 125px
-
-      &.instagram {
-        margin-bottom: $half-block;
-      }
     }
 
     a {
@@ -130,10 +126,6 @@
 
         &:last-child {
           margin-right: 0;
-        }
-
-        &.instagram {
-          margin-bottom: 0;
         }
       }
     }
