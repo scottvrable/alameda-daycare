@@ -6,11 +6,13 @@ block vars
 
 mixin quotation(theQuote, attribution)
   .quote
-    p.the-quote
-      span &ldquo;
-      | !{theQuote}&rdquo;
-    p.attribution
-      | &mdash;!{attribution}
+    for para in theQuote
+      p.the-quote
+        span &ldquo;
+        | !{para}
+    div
+      p.attribution
+        | &mdash;!{attribution}
 
 block content
   section.quotes
@@ -18,20 +20,30 @@ block content
       h1 ThulaSana Home Daycare Testimonials
       div
         +quotation(
-          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
-          'Joanne&nbsp;Lee'
+          ['Happy is such a wonderful daycare provider for my son. He absolutely loves her! She provides such a warm, caring, safe, and fun environment for my son and the other infants. I&rsquo;m always impressed by her unending enthusiasm and energy for the little ones. In addition to care, she also provides nutritious meals, plenty of activities outside and at the park, and constant updates/photos to me during the day (using Brightwheel app) on my son&rsquo;s feeding/sleeping schedules and interactions with the other children.',
+            'I always feel confident and relaxed leaving my son with Happy for the day when I head off to work. He, and any other child who are at her daycare, will be in good hands!'
+          ],
+          'Joanne Lee'
         )
         +quotation(
-          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
-          'Person Two'
-        )
+          [
+            'Thembeka was caring for my two children, twins, ages five-months and occasionally my eldest daughter, age three, who was enrolled in preschool part-time. I would certainly recommend her to parents seeking a peace of mind in her daycare center.',
+            'She is very dependable and I feel fortunate to have had her as a part of my children&rsquo;s lives. Thembeka has a kind-hearted, patient and nurturing personality. She has provided my infants with fantastic care, even being patient while they are sick or just having a tough day.',
+            'She was always eager to get the girls out of the house for some fresh air or take them to the local library for story time. In addition to caring for the twins, she also finds time to bathe and fold their laundry and tidy their room which was very helpful to me.'
+          ],
+          'Miriam&nbsp;T.')
         +quotation(
-          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
-          'Person Three'
-        )
+          [
+            'I would highly recommend Thembeka and we fondly remember the times with her. The older daughter still asks about her (she even remembers some of the things that Thembeka taught her). The younger ones were absolutely delighted to see her, every single day.',
+            'That to me, says a lot about how good Thembeka is with kids. She is responsible, very careful with her work and goes above and beyond what is expected. A family would be lucky to have their child at her daycare.'
+          ],
+          'Sapna&nbsp;S.')
         +quotation(
-          'Morbi et interdum mauris. Pellentesque lobortis varius tellus sed rhoncus. Cras consectetur in mauris in dictum. Proin cursus leo eget enim egestas, at viverra nisl&nbsp;fermentum.',
-          'Person Four'
+          ['One of my favorite things about Happy is that she respects children. She listens to them and helps them develop a sense of independence and self-confidence. Her friendly and outgoing personality provide a great model for how kids should engage with the world. With her as their guide, my girls clearly felt secure and confident exploring the world.'],
+          'Pech family')
+        +quotation(
+          ['Happy (Thembeka) is a wonderful, caring, and gentle caregiver. She has cared for my son on multiple occasions and would take him to the library, read to him, go out on walks, etc. She is calm, sweet natured, and very clean and tidy. I would recommend.'],
+          'Amanda'
         )
 
   include ../_partials/cta-banner

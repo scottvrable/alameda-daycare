@@ -14,17 +14,51 @@
     margin-bottom: $three-halves-block;
     max-width: 525px;
 
+    p {
+      &:first-child {
+        span {
+          display: inline-block;
+          font-size: 125px;
+          font-weight: $font-regular;
+          line-height: 1px;
+          margin-bottom: $quarter-block;
+          text-indent: -($five-fourths-block);
+          vertical-align: bottom;
+        }
+      }
+
+      &:nth-last-class(2) {
+        color: blue;
+      }
+    }
+
     &:nth-child(odd) {
-      span, .attribution {
+      .attribution {
         color: $secondary-color;
+      }
+
+      p {
+        &:first-child {
+          span {
+            color: $secondary-color;
+          }
+        }
       }
     }
 
     &:nth-child(even) {
       margin-left: calc(100% - 525px);
 
-      span, .attribution {
+      .attribution {
         color: $primary-color-dark;
+      }
+
+      p {
+        &:first-child {
+          span {
+            color: $primary-color-dark;
+          }
+        }
       }
     }
 
@@ -33,20 +67,26 @@
     }
 
     .the-quote {
-      font-size: $fs-normal-plus;
+      font-size: 23px;
       font-weight: $font-thin;
-      line-height: 1.3;
-      margin: 0;
-    }
+      line-height: 1.4;
+      margin: $third-block 0 0;
 
-    span {
-      display: inline-block;
-      font-size: 125px;
-      font-weight: $font-regular;
-      line-height: 1px;
-      margin-bottom: $quarter-block;
-      text-indent: -($five-fourths-block);
-      vertical-align: bottom;
+      &:first-child {
+        span {
+          margin-left: 0;
+        }
+      }
+
+      &:last-of-type {
+        &:after {
+          content: '”';
+        }
+      }
+
+      span {
+        margin-left: -8px;
+      }
     }
 
     .attribution {
@@ -65,15 +105,24 @@
     }
   }
 
+  @include breakpoint(600px) {
+    .quote {
+      p.the-quote:first-child {
+        span {
+          color: $main-text-color;
+          font-size: $fs-normal;
+          font-weight: $font-thin;
+          margin-bottom: 0;
+          line-height: 1.4;
+          text-indent: -8px;
+        }
+      }
+    }
+  }
+
   @include breakpoint(mobile) {
     .quote {
       padding-left: $half-block + $eighth-block;
-
-      span {
-        font-size: $fs-large;
-        margin-bottom: $half-block;
-        text-indent: -($half-block + $eighth-block);
-      }
 
       .the-quote {
         font-size: $fs-normal;
@@ -86,27 +135,31 @@
   }
 
   @include breakpoint(mobile-portrait) {
-    h2 {
+    h1 {
       margin-bottom: $three-fourths-block;
     }
 
     .quote {
       margin-bottom: $default-block;
-      padding-left: $three-eighths-block;
-
-      .the-quote, .attribution {
-        font-size: $fs-small;
-      }
+      padding-left: 0;
 
       .the-quote {
-        font-weight: $font-regular;
-        line-height: 1.5;
+        font-size: $fs-small;
+
+        span {
+          margin-left: -4px;
+        }
       }
 
-      span {
-        font-size: $fs-above-average;
-        margin-bottom: $quarter-block;
-        text-indent: -$three-eighths-block;
+      p.the-quote:first-child {
+        span {
+          font-size: $fs-small;
+          text-indent: -4px;
+        }
+      }
+
+      .attribution {
+        font-size: $fs-small;
       }
     }
   }
