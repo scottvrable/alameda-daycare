@@ -3,6 +3,8 @@ extends ../_layouts/site
 block vars
   - var pageClass = 'testimonials-page'
   - var title = 'Testimonials'
+  - var description = 'Read the myriad of glowing reviews for ThulaSana Home Daycare of Alameda.'
+  - var ogTags = {url: 'http://alameda-daycare.com', title: 'ThulaSana Home Daycare Testimonials', desc: description, img: 'http://alameda-daycare.com/img/shared/og.jpg', twitterImg: 'http://alameda-daycare.com/img/shared/og-twitter.jpg', type: 'article'}
 
 mixin quotation(theQuote, attribution)
   .quote
@@ -23,7 +25,7 @@ block content
           ['Happy is such a wonderful daycare provider for my son. He absolutely loves her! She provides such a warm, caring, safe, and fun environment for my son and the other infants. I&rsquo;m always impressed by her unending enthusiasm and energy for the little ones. In addition to care, she also provides nutritious meals, plenty of activities outside and at the park, and constant updates/photos to me during the day (using Brightwheel app) on my son&rsquo;s feeding/sleeping schedules and interactions with the other children.',
             'I always feel confident and relaxed leaving my son with Happy for the day when I head off to work. He, and any other child who are at her daycare, will be in good hands!'
           ],
-          'Joanne Lee'
+          'Joanne&nbsp;L.'
         )
         +quotation(
           [

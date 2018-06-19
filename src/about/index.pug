@@ -3,6 +3,8 @@ extends ../_layouts/site
 block vars
   - var pageClass = 'about-page'
   - var title = 'About Us'
+  - var description = 'ThulaSana Home Daycare of Alameda will care for a maximum of six children between the ages of four months and three years.'
+  - var ogTags = {url: 'http://alameda-daycare.com/about', title: 'About ThulaSana Home Daycare', desc: description, img: 'http://alameda-daycare.com/img/shared/og.jpg', twitterImg: 'http://alameda-daycare.com/img/shared/og-twitter.jpg', type: 'article'}
 
 mixin bio(name, title, image, alt, description)
   .bio
