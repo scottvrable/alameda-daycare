@@ -39,11 +39,12 @@
     vertical-align: top;
   }
 
-  h2 {
+  h1 {
     color: #fff;
     font-size: $fs-xlarge;
     font-weight: $font-thin;
     margin: 0 0 $half-block;
+    text-align: left;
   }
 
   p {
@@ -62,7 +63,7 @@
     margin-left: $five-fourths-block;
     vertical-align: top;
 
-    h3 {
+    h2 {
       color: #fff;
       font-size: 24px;
       letter-spacing: 0.1em;
@@ -109,7 +110,7 @@
     .social {
       margin: $default-block 0 0 0;
 
-      h3 {
+      h2 {
         text-align: center;
       }
 
@@ -136,7 +137,7 @@
       padding-bottom: $default-block;
     }
 
-    h2 {
+    h1 {
       font-size: $fs-above-average;
     }
 
