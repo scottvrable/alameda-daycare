@@ -7,14 +7,14 @@ block vars
   - var ogTags = {url: 'http://alameda-daycare.com/about', title: 'About ThulaSana Home Daycare', desc: description, img: 'http://alameda-daycare.com/img/shared/og.jpg', twitterImg: 'http://alameda-daycare.com/img/shared/og-twitter.jpg', type: 'article'}
 
 mixin bio(name, title, image, alt, description)
-  .bio
+  article.bio
     .image-col
       .image-outer
         .image-inner
           img(src=image alt=alt)
     .text-col
-      h3 !{name}
-      h4 !{title}
+      h2 !{name}
+      h3 !{title}
       each para in description
         p !{para}
 
@@ -34,7 +34,7 @@ block content
           ])
 
   section.more-details
-    .inner-container
+    article.inner-container
       h2 Details
       ul
         li ThulaSana Home Daycare will care for a maximum of #[strong six&nbsp;children.]
